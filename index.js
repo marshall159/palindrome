@@ -11,7 +11,25 @@ function Phrase(content) {
 
     this.processor = function(string) {
     // FILL IN
-        return string.toLowerCase();
+        return this.letters(string).toLowerCase();
+    }
+
+    // this.letters = function() {
+    //     var letters = [];
+
+    //     for (let i = 0; i < this.content.length; i++) {
+    //         let letter = this.content[i];
+
+    //         if(letter.match(/[a-zA-Z]/)) {
+    //             letters.push(letter);
+    //         }
+    //     }
+    //     return letters.join('');
+    // }
+
+    this.letters = function() {
+        // return Array.from(this.content).filter(char => char.match(/[a-zA-Z]/)).join('');
+        return (this.content.match(/[A-Za-z]/g) || []).join('');
     }
 
     this.processedContent = function processedContent() {
